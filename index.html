@@ -85,9 +85,9 @@
       <div class="max-w-screen-2xl mx-auto p-4">
         <h1 class="text-center text-2xl md:text-3xl font-semibold mb-6">Choose Your Trees</h1>
 
-        <div class="flex">
+        <div class="grid grid-cols-5">
           <!-- Sidebar -->
-          <aside class="w-1/5 bg-green-50 p-4 rounded-xl">
+          <aside class="col-span-1 bg-green-50 p-4 rounded-xl">
             <h2 class="font-semibold mb-3">Categories</h2>
             <ul class="space-y-2 text-sm">
               <li>
@@ -149,31 +149,16 @@
           </aside>
 
           <!-- Product Grid -->
-          <main class="grid grid-cols-3">
-            <!-- Card -->
-            <div class="h-[380px] bg-white shadow rounded-xl p-4">
-              <div class="h-44 bg-gray-200 rounded-md mb-3"></div>
-              <h3 class="font-semibold text-lg mb-2">Mango Tree</h3>
-              <p class="text-[0.62rem] text-gray-600 mb-2">
-                A fast-growing tropical tree that produces delicious, juicy mango fruits during the summer season.
-              </p>
-              <div class="mt-auto flex items-center justify-between mb-2">
-                <p class="text-green-600 text-sm mt-2 block py-1 px-3 bg-[#DCFCE7] text-[#15803D] rounded-full">
-                  Fruit Tree
-                </p>
-                <p class="font-semibold">৳500</p>
-              </div>
+          <main class="col-span-3">
+            <div  id="card-parent" class="grid grid-cols-3 gap-3">
 
-              <div class="mt-auto flex items-center justify-between">
-                <button class="w-full bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700">
-                  Add to Cart
-                </button>
-              </div>
             </div>
+            <!-- Card -->
+
           </main>
 
           <!-- Cart -->
-          <aside class="w-1/4 bg-green-50 p-4 rounded-xl">
+          <aside class="col-span-1 bg-green-50 p-4 rounded-xl">
             <h2 class="font-semibold mb-3">Your Cart</h2>
             <div class="space-y-3 text-sm">
               <div class="flex justify-between items-center p-2 bg-[#F0FDF4]">
