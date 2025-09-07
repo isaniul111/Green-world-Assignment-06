@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <header>
+    <header class="sticky top-0 z-50">
       <!-- navbar section   -->
       <div class="navbar bg-base-100 shadow-sm bg-[#15803D]">
         <div class="navbar-start">
@@ -96,33 +96,16 @@
 
           <!-- Product Grid -->
           <main class="col-span-3">
-            <div  id="card-parent" class="grid grid-cols-3 gap-3">
-
-            </div>
+            <div id="card-parent" class="grid grid-cols-3 gap-3"></div>
             <!-- Card -->
-
           </main>
 
           <!-- Cart -->
-          <aside class="col-span-1 bg-green-50 p-4 rounded-xl">
+          <aside id="cart-parent" class="col-span-1 bg-green-50 p-4 rounded-xl space-y-3">
             <h2 class="font-semibold mb-3">Your Cart</h2>
-            <div class="space-y-3 text-sm">
-              <div class="flex justify-between items-center p-2 bg-[#F0FDF4]">
-                <div class="space-y-2">
-                  <h3 class="text-[0.875rem] font-semibold">Mango Tree</h3>
-                  <h3 class="text-gray-500">৳500 x 1</h3>
-                </div>
-                <div>
-                    <button class="p-3">x</button>
-                </div>
-              </div>
-              
-            </div>
-            <hr class="my-3" />
-            <div class="flex items-center justify-between font-semibold">
-              <span>Total:</span>
-              <span>৳1000</span>
-            </div>
+
+            <div id="totalCount"></div>
+            <!-- dynamic added card values  -->
           </aside>
         </div>
       </div>
@@ -153,15 +136,15 @@
     <section class="w-full bg-[#CFF0DC] text-center items-center py-24">
       <h2 class="mb-5 text-2xl font-semibold">Our Impact</h2>
       <div class="flex justify-evenly items-center text-center">
-        <div class="rounded-xl px-20 py-5 bg-white">
+        <div class="rounded-xl px-30 py-10 bg-white hover:bg-slate-400">
           <h1 class="text-[#15803D] font-semibold text-2xl">500K+</h1>
           <p class="text-xs">Trees Planted</p>
         </div>
-        <div class="rounded-xl px-15 py-5 bg-white">
+        <div class="rounded-xl px-30 py-10 bg-white hover:bg-slate-400">
           <h1 class="text-[#15803D] font-semibold text-2xl">120+</h1>
           <p class="text-xs">Communities Involved</p>
         </div>
-        <div class="rounded-xl px-15 py-5 bg-white">
+        <div class="rounded-xl px-30 py-10 bg-white hover:bg-slate-400">
           <h1 class="text-[#15803D] font-semibold text-2xl">30+</h1>
           <p class="text-xs">Countries Reached</p>
         </div>
@@ -188,6 +171,14 @@
         </div>
       </div>
     </section>
+
+    <section>
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
+        <div id="modal-box" class="modal-box space-y-4 p-4 flex justify-center items-center"></div>
+      </dialog>
+    </section>
+
     <!-- footer section  -->
     <footer class="flex bg-[#14532D] w-full h-14 items-center justify-center">
       <h2 class="text-white text-xs">© 2025 Green Earth. All Rights Reserved.</h2>
