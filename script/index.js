@@ -16,7 +16,7 @@ const displayAllPlants=(plants)=>{
     plants.forEach(plant=>{
         const cards=document.createElement('div');
         cards.innerHTML=`
-        <div class="h-[380px] bg-white shadow rounded-xl p-4">
+        <div id="word-container" class="h-[380px] bg-white shadow rounded-xl p-4">
               <div class="h-44  rounded-md mb-1"><img class="w-full h-full object-cover rounded-lg" src="${plant.image}" alt=""></div>
               <h3 onclick="boxModal(${plant.id})" class="font-semibold text-lg mb-1">${plant.name}</h3>
               <p class="text-[0.62rem] text-gray-600 mb-0">
@@ -37,9 +37,8 @@ const displayAllPlants=(plants)=>{
             </div>
     `;
     cardParent.appendChild(cards);
-    // manageSpinner(false);
+    manageSpinner(false);
     });
-    
 }
 
 const category=()=>{
@@ -51,7 +50,7 @@ const category=()=>{
         category.categories.forEach(el=>{
             const innerBtn=document.createElement('div');
             innerBtn.innerHTML=`
-                <button id="cate-btn-${el.id}" class="block px-3 py-2 rounded-md hover:bg-green-600 hover:text-white w-full text-left">
+                <button id="cate-btn-${el.id}" class="block px-3 py-2 rounded-md hover:bg-green-600 hover:text-white w-full text-left btn-category">
                  ${el.category_name}
                 </button>
             `;
@@ -59,12 +58,14 @@ const category=()=>{
         btnList.appendChild(innerBtn);
         innerBtn.classList.add('active');
         });
+
     });
 }
 const displayCategory=(id)=>{
+    manageSpinner(true);
     const url=`https://openapi.programming-hero.com/api/category/${id}`;
+    removeActive();
     fetch(url).then(res=>res.json()).then(el=>{ 
-        removeActive();
         displayAllPlants(el.plants);
     });
 }
@@ -76,7 +77,6 @@ const displayCategory=(id)=>{
 // "price": 500
 
 const boxModal=(id)=>{
-    // manageSpinner(true);
     const url=`https://openapi.programming-hero.com/api/plant/${id}`;
     fetch(url).then(res=>res.json()).then(combine=>{
       // console.log(combine.plants);
@@ -155,20 +155,20 @@ const countTotal = () => {
   `;
 };
 const removeActive=()=>{
-  const lessionsButtion=document.querySelectorAll('.lession-btn');
+  const lessionsButtion=document.querySelectorAll('.btn-category');
   lessionsButtion.forEach(btn=>{
     btn.classList.remove('active');
   });
 }
-// const manageSpinner=(status)=>{
-//   if(status==true){
-//     document.getElementById('spinner').classList.remove('hidden');
-//     document.getElementById('word-container').classList.add('hidden');
-//   }
-//   else{
-//     document.getElementById('spinner').classList.add('hidden');
-//     document.getElementById('word-container').classList.remove('hidden');
-//   }
-// }
+const manageSpinner=(status)=>{
+  if(status==true){
+    document.getElementById('spinner').classList.remove('hidden');
+    document.getElementById('word-container').classList.add('hidden');
+  }
+  else{
+    document.getElementById('spinner').classList.add('hidden');
+    document.getElementById('word-container').classList.remove('hidden');
+  }
+}
 category();
 allPlants();
