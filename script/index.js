@@ -37,6 +37,7 @@ const displayAllPlants=(plants)=>{
             </div>
     `;
     cardParent.appendChild(cards);
+    // manageSpinner(false);
     });
     
 }
@@ -63,6 +64,7 @@ const category=()=>{
 const displayCategory=(id)=>{
     const url=`https://openapi.programming-hero.com/api/category/${id}`;
     fetch(url).then(res=>res.json()).then(el=>{ 
+        removeActive();
         displayAllPlants(el.plants);
     });
 }
@@ -74,6 +76,7 @@ const displayCategory=(id)=>{
 // "price": 500
 
 const boxModal=(id)=>{
+    // manageSpinner(true);
     const url=`https://openapi.programming-hero.com/api/plant/${id}`;
     fetch(url).then(res=>res.json()).then(combine=>{
       // console.log(combine.plants);
@@ -151,7 +154,21 @@ const countTotal = () => {
     </div>
   `;
 };
-
-
+const removeActive=()=>{
+  const lessionsButtion=document.querySelectorAll('.lession-btn');
+  lessionsButtion.forEach(btn=>{
+    btn.classList.remove('active');
+  });
+}
+// const manageSpinner=(status)=>{
+//   if(status==true){
+//     document.getElementById('spinner').classList.remove('hidden');
+//     document.getElementById('word-container').classList.add('hidden');
+//   }
+//   else{
+//     document.getElementById('spinner').classList.add('hidden');
+//     document.getElementById('word-container').classList.remove('hidden');
+//   }
+// }
 category();
 allPlants();

@@ -36,15 +36,9 @@
               </svg>
             </div>
             <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
+              <li><a class="text-black">About</a></li>
+              <li><a class="text-black">Gallery</a></li>
+              <li><a class="text-black">Plant a Tree</a></li>
             </ul>
           </div>
           <a class="btn btn-ghost text-xl text-white">Green Earth</a>
@@ -79,15 +73,19 @@
         <img src="./assets/hero-leaf2.png" alt="" />
       </div>
     </section>
+    <!-- spinner seciton  -->
+    <section id="spinner" class="flex justify-center my-8 hidden">
+      <span class="loading loading-bars loading-xl"></span>
+    </section>
 
     <!-- Cards section begains hare  -->
     <section>
       <div class="max-w-screen-2xl mx-auto p-4">
         <h1 class="text-center text-2xl md:text-3xl font-semibold mb-6">Choose Your Trees</h1>
 
-        <div class="grid grid-cols-5">
+        <div class="flex flex-col lg:grid lg:grid-cols-5">
           <!-- Sidebar -->
-          <aside class="col-span-1 bg-green-50 p-4 rounded-xl">
+          <aside class="lg:col-span-1 bg-green-50 p-4 rounded-xl">
             <h2 class="font-semibold mb-3">Categories</h2>
             <ul id="btn-list" class="space-y-2 text-sm">
               <!-- dynamic button  -->
@@ -95,13 +93,13 @@
           </aside>
 
           <!-- Product Grid -->
-          <main class="col-span-3">
-            <div id="card-parent" class="grid grid-cols-3 gap-3"></div>
+          <main class="lg:col-span-3">
+            <div id="card-parent" class="flex flex-col lg:grid lg:grid-cols-3 gap-3"></div>
             <!-- Card -->
           </main>
 
           <!-- Cart -->
-          <aside id="cart-parent" class="col-span-1 bg-green-50 p-4 rounded-xl space-y-3">
+          <aside id="cart-parent" class="lg:col-span-1 bg-green-50 p-4 rounded-xl space-y-3">
             <h2 class="font-semibold mb-3">Your Cart</h2>
 
             <div id="totalCount"></div>
@@ -112,13 +110,13 @@
     </section>
 
     <!-- About the campain section   -->
-    <section class="w-[700px] justify-center mx-auto mb-20">
+    <section class="w-full lg:w-[700px] justify-center mx-auto mb-20">
       <h3 class="text-2xl text-center font-semibold my-5">About the Campaign</h3>
       <div class="flex gap-5">
         <div class="flex-1">
-          <img class="w-[530]" src="./assets/about.png" alt="" />
+          <img class="w-[530] rounded-lg" src="./assets/about.png" alt="" />
         </div>
-        <div class="flex-1 pt-24 space-y-5">
+        <div class="flex-1 pt-0 lg:pt-24 space-y-5">
           <p class="text-xs">
             Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start,
             we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create
@@ -135,8 +133,8 @@
     <!-- our impact section added hare  -->
     <section class="w-full bg-[#CFF0DC] text-center items-center py-24">
       <h2 class="mb-5 text-2xl font-semibold">Our Impact</h2>
-      <div class="flex justify-evenly items-center text-center">
-        <div class="rounded-xl px-30 py-10 bg-white hover:bg-slate-400">
+      <div class="flex flex-col lg:flex-row justify-evenly gap-4 items-center text-center">
+        <div class="rounded-xl px-36 py-10 lg:px-30 bg-white hover:bg-slate-400">
           <h1 class="text-[#15803D] font-semibold text-2xl">500K+</h1>
           <p class="text-xs">Trees Planted</p>
         </div>
@@ -144,7 +142,7 @@
           <h1 class="text-[#15803D] font-semibold text-2xl">120+</h1>
           <p class="text-xs">Communities Involved</p>
         </div>
-        <div class="rounded-xl px-30 py-10 bg-white hover:bg-slate-400">
+        <div class="rounded-xl px-32 lg:px-30 py-10 bg-white hover:bg-slate-400">
           <h1 class="text-[#15803D] font-semibold text-2xl">30+</h1>
           <p class="text-xs">Countries Reached</p>
         </div>
@@ -155,7 +153,7 @@
       <div>
         <h2 class="text-white text-2xl font-semibold mb-5 text-center">Plant a Tree Today</h2>
         <div class="">
-          <fieldset class="fieldset bg-base-200 rounded-box w-xl p-7 bg-[#15803D]">
+          <fieldset class="fieldset bg-base-200 rounded-box w-11/12 lg:w-xl p-7 bg-[#15803D]">
             <input type="text" class="input w-full" placeholder="Your Name" />
             <input type="email" class="input w-full" placeholder="Your Email Address" />
             <select class="select w-full">
