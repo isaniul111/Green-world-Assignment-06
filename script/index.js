@@ -56,7 +56,6 @@ const category=()=>{
             `;
         innerBtn.setAttribute('onclick', `displayCategory(${el.id})`);
         btnList.appendChild(innerBtn);
-        innerBtn.classList.add('active');
         });
 
     });
@@ -64,9 +63,11 @@ const category=()=>{
 const displayCategory=(id)=>{
     manageSpinner(true);
     const url=`https://openapi.programming-hero.com/api/category/${id}`;
-    removeActive();
     fetch(url).then(res=>res.json()).then(el=>{ 
-        displayAllPlants(el.plants);
+      removeActive();
+      const clickBtnActive=document.getElementById(`cate-btn-${id}`);
+      clickBtnActive.classList.add('active');
+      displayAllPlants(el.plants);
     });
 }
 // "id": 1,
@@ -155,8 +156,9 @@ const countTotal = () => {
   `;
 };
 const removeActive=()=>{
-  const lessionsButtion=document.querySelectorAll('.btn-category');
-  lessionsButtion.forEach(btn=>{
+  const cateButtion=document.querySelectorAll('.btn-category');
+  console.log(cateButtion);
+  cateButtion.forEach(btn=>{
     btn.classList.remove('active');
   });
 }
