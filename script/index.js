@@ -108,17 +108,17 @@ let cartTotal = 0;
 const addToCart = (name, price) => {
   cartTotal += price;
   const cartParent = document.getElementById("cart-parent");
-
   const cartChild = document.createElement("div");
+  alert(`${name} has been added to the cart.`);
   cartChild.innerHTML = `
-    <div class="space-y-3 text-sm">
+    <div class="space-y-3 text-sm mb-3 bg-orange-200 rounded-lg shadow-sm">
       <div class="flex justify-between items-center p-2 bg-[#F0FDF4]">
         <div class="space-y-2">
           <h3 class="text-[0.875rem] font-semibold">${name}</h3>
           <h3 class="text-gray-500">৳${price} x 1</h3>
         </div>
         <div>
-          <button class="p-3 remove-btn">x</button>
+          <button class="p-3 remove-btn">❌</button>
         </div>
       </div>
     </div>
