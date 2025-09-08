@@ -1,167 +1,40 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
+1) What is the difference between var, let, and const?
+**Answer: 
+var: is the old way. Its scope is either global or limited to the function it's in. This can lead to unexpected behavior and bugs, so it's generally best to avoid it in new code.
 
-### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
+let: is the modern, flexible option. It's block-scoped, meaning it only exists within the curly braces {} it was declared in, like in a for loop or an if statement. You can also reassign its value later.
 
-### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
+const: is for constants. It's also block-scoped, but once you declare a value, you cannot reassign it. Use const whenever you know a variable's value won't change, which helps prevent bugs and makes your code's intent clearer.
 
-### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
+2) What is the difference between map(), forEach(), and filter()?
+**Answer:
+forEach(): is for simple iteration. It loops through each item and runs a function, but it doesn't return a new array. Use it when you just need to do something with each item, like logging it to the console or performing a side effect.
 
----
-# Green Earth
+map(): is for transforming an array. It creates a new array by calling a function on every item in the original array. The new array will have the same number of elements, but with a different value.
 
+filter(): is for selecting items. It creates a new array containing only the items that pass a specific test (the function you provide must return true). The original array remains unchanged.
 
-## Private Repository: https://classroom.github.com/a/nVZrg5R9 
+3) What are arrow functions in ES6?
+**Answer:
+Arrow functions are a modern, more concise way to write function expressions. They use the => syntax.
 
-## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
+The main benefits are:
 
+Shorter Syntax: For simple, single-expression functions, you can omit the return keyword and the curly braces, which makes the code much cleaner.
 
----
-🌴 API Endpoints
----
-1. Get 🌴All Plants
-```bash
-https://openapi.programming-hero.com/api/plants
-```
+Lexical this: Unlike regular functions, arrow functions don't have their own this binding. They automatically inherit the this value from the code around them, which solves a common source of bugs in JavaScript.
 
-2. Get 🌴All categories <br/>
-```bash
-https://openapi.programming-hero.com/api/categories
-```
+4) How does destructuring assignment work in ES6?
+**Answer:
+Destructuring is a powerful syntax that lets you "unpack" values from arrays and properties from objects into distinct variables. It makes your code more readable and reduces the need for repeated property access.
 
+Object Destructuring: Instead of writing const name = user.name; and const age = user.age;, you can simply write const { name, age } = user; to get both values at once.
 
-3. Get 🌴plants by categories <br/>
-```bash
-https://openapi.programming-hero.com/api/category/${id}
-```
+Array Destructuring: It works the same way for arrays, using the item's position. For example, const [first, second] = ['a', 'b']; is a concise way to declare two new variables.
 
-```bash
-https://openapi.programming-hero.com/api/category/1
-```
-
-4. Get 🌴Plants Detail <br/>
-
-```bash
-https://openapi.programming-hero.com/api/plant/${id}
-```
-
-```bash
-https://openapi.programming-hero.com/api/plant/1
-```
----
-
-
-
-
-## ✅ Main Requirements 
-
-#### 1) Navbar
-
-- Website **logo/name** on the **left**  
-- **Menu items** in the **center** 
-- **Plant a Tree button** on the **right** 
-
-#### 2) Banner 
-- A **background image**  
-- A **title** and **subtitle**  
-- A **centered button**  
-
-#### 3) About Campaign
-- **Section heading**  
-- **Image on the left**, **text on the right**  
-
-#### 4) Our Impact Section 
-- Show **3 cards** with campaign **statistics**  
-
-#### 5) Plant a Tree Today Section & Footer
-- **Form**: Name, Email, Number of Trees  
-- **Footer** with copyright info 
-
-#### 6) Responsiveness 
-- Website must be **mobile responsive**  
-
----
-#### 7) Create a README file to answer the following question-
-
-
-#### 1) What is the difference between var, let, and const?
-
-#### 2) What is the difference between map(), forEach(), and filter()? 
-
-#### 3) What are arrow functions in ES6?
-
-#### 4) How does destructuring assignment work in ES6?
-
-#### 5) Explain template literals in ES6. How are they different from string concatenation?
-
-## ⚙️ Functionalities 
-
-1) Category Loading 
-Load Tree Categories dynamically on the left side.
-
-2) Category Click → Tree Data 
-On clicking a category: load trees of that category.
-
-Display in a 3-column card layout.
-
-3) Card Contents 
- Each card includes:
-
-        - Image
-
-        -  Name
-
-        - Short description
-
-        - Category
-
-        - Price
-
-        - Add to Cart button
-
-4) Modal on Card Click 
-Clicking a tree name on a card opens a modal with full tree details.
-
-
-##  🧪 Challenges 
-
-
-    1) Add to Cart 
-    Clicking Add to Cart: - Adds the tree to Cart List
-                          - Shows tree name 
-
-    2) Total Calculation 
-    Calculate total price of trees in cart.
-
-    3) Remove from Cart 
-    Clicking ❌ removes tree and deducts price from total.
-
-    4) Loading Spinner
-    Show spinner while data is loading.
-
-    5) Active Button State 
-    Highlight active category button when selected.
-
-
-
-🧰 Technology Stack:
-        
-        HTML
-
-        CSS (Vanilla / Tailwind / DaisyUI)
-
-        JavaScript (Vanilla only, no frameworks)
-
-📌 Rules
-✅ At least 5 meaningful commits
-
-❌ No dummy text or Lorem Ipsum — must use relevant content
-
-
-
-
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
-
----
+5) Explain template literals in ES6. How are they different from string concatenation?
+**Answer:
+They’re the cool upgrade to strings. Use backticks ` instead of quotes, and you can:
+Insert variables directly with ${}
+Write multi-line strings without \n
+Example:const sentence = `Hello, my name is ${name} and I am ${age} years old.`;
